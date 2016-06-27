@@ -9,7 +9,6 @@
   "author": "dirtypp",
   "license": "ISC",
   "dependencies": {
-      "async":"*"
   },
   "devDependencies": {
     "unit.js":"*"
