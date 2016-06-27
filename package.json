@@ -1,0 +1,17 @@
+{
+  "name": "comb",
+  "version": "1.0.0",
+  "description": "a middleware for express to check parameters",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "dirtypp",
+  "license": "ISC",
+  "dependencies": {
+      "async":"*"
+  },
+  "devDependencies": {
+    "unit.js":"*"
+  }
+}
