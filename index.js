@@ -1,6 +1,6 @@
 /***
  * options : {
- *      [parameter name]:Array|String(split by ",") each item must be one of following.
+ *      [parameter name]:Array|String(split by ";") each item must be one of following.
  * }
  * required
  * optional
@@ -13,7 +13,8 @@
 "use strict";
 const qs = require("querystring");
 let Comb = {
-    newComb:function (options,fail) {
+    newComb:function (options,fail,separator) {
+        separator = separator||";";
         if (isEmpty(options)) {
             return function (req, res, next) {
                 return next();
@@ -24,7 +25,7 @@ let Comb = {
         for (let attr in options) {
             (function (key, items) {
                 if (typeof items === 'string') {
-                    items = items.split(';');
+                    items = items.split(separator);
                 }
                 if(Array.isArray(items)&&verifyPatterns(items)){
                     m[key] = function(value){
