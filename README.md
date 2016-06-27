@@ -3,20 +3,20 @@ a middle-wear for Express to validate the parameters of request
 
 usage:
 ```
-  const comb = require("comb");
+  const Matcher = require("param-matcher");
   let router = Express.Route();
   
   let options = {
     id:"required;isInt",
     name:"optional;REGEXP:^[a-z_0-9]{6,20}$"
   } 
-  router.all("/",comb.newComb(options),(req,res,next)=>{
+  router.all("/",Matcher.newMatcher(options),(req,res,next)=>{
       //TODO:your code
   }
   
 ```  
 
-```comb.newComb(options,fail) ```
+```Matcher.newMatcher(options,fail) ```
 
 ###### options：
 an object contains key-values that used for specifying which method to match the parameter in request
@@ -28,7 +28,7 @@ a string variate,only 3 patterns, specifed which way to return the unmatch messa
 2. ```"redirect:${URL}"``` : redirect to the URL with unmatch message in the query string                               
 3. ```"render:${templat}"``` : render the specified templat to browser,with unmatch message                    
 
-`comb.setMatcher(name,matcher)`                        
+`Matcher.setMatcher(name,matcher)`                        
 
 
 ###### name
