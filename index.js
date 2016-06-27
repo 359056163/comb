@@ -12,7 +12,7 @@
 
 "use strict";
 const qs = require("querystring");
-let Comb = {
+let Matcher = {
     /**
      * 构造一个参数验证的中间件
      * @param options {Object} 请求参数匹配设置。
@@ -20,7 +20,7 @@ let Comb = {
      * @param separator {String} 每条 参数匹配设置 的分隔符
      * @returns {Function}
      */
-    newComb: function (options, fail, separator) {
+    newMatcher: function (options, fail, separator) {
         separator = separator || ";";
         if (isEmpty(options)) {
             return function (req, res, next) {

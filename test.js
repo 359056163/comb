@@ -1,5 +1,5 @@
 "use strict";
-let comb = require("./index");
+let Matcher = require("./index");
 
 
 let options = {
@@ -34,7 +34,11 @@ let response = {
 let next = function(){
   console.log("NEXT was called");
 }
-
-let midwear = comb.newComb(options,"render:default.jade");
+/**
+ * 这里有个小坑，作为分隔符的字符串，最好不要出现在 matcherCollection.REGEXP 正则表达式中。
+ * there is a little problem , the character as separator could not be included in regular.
+ * @type {*|Function}
+ */
+let midwear = Matcher.newMatcher(options,"render:default.jade",";");
 
 midwear(request,response,next);

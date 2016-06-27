@@ -1,5 +1,5 @@
 {
-  "name": "comb",
+  "name": "param-matcher",
   "version": "1.0.0",
   "description": "a middleware for express to check parameters",
   "main": "index.js",
