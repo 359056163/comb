@@ -15,6 +15,7 @@ usage:
   }
   
 ```  
+"required","optional" 2 items are mutual exclusion,and they must be the first item.
 
 ```Matcher.newMatcher(options,fail) ```
 
