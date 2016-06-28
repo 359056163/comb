@@ -34,6 +34,14 @@ let Matcher = {
                     items = items.split(separator);
                 }
                 if (Array.isArray(items) && verifyPatterns(items)) {
+                    let optionalIndex = items.indexOf("optional");
+                    let requiredIndex = items.indexOf("required");
+                    if(optionalIndex>=0&&requiredIndex>=0){
+                        throw new Error("the two items: \"required\" and \"optional\" are mutex !");
+                    }
+                    if(items.indexOf("optional")>0||items.indexOf("required")>0){
+                        throw new Error("the two items: \"required\" or \"optional\"  must be first one,if you need them.");
+                    }
                     m[key] = function (value) {
                         if (items[0] == "optional") {
                             if (value == null || value == "")
@@ -160,7 +168,7 @@ let matcherCollection = {
     }
 }
 
-module.exports = Comb;
+module.exports = Matcher;
 
 
 function verifyPatterns(arr) {
