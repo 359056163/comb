@@ -1,6 +1,6 @@
 {
   "name": "param-matcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a middleware for express to check parameters",
   "main": "index.js",
   "scripts": {
