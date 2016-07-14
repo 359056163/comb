@@ -174,7 +174,7 @@ module.exports = Matcher;
 function verifyPatterns(arr) {
     let flag = true;
     for (let v of arr) {
-        if (typeof v !== 'string' && !Comb.matcherCollection[v]) {
+        if (typeof v !== 'string' || !matcherCollection[v]) {
             flag = false;
         }
     }
